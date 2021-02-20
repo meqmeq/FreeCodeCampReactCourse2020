@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import './index.css'
+import {books} from './books'
+import Book from './Book'
 // This is a stateless component and this much always return something 
 // Always return JSX
 
@@ -8,23 +10,33 @@ import './index.css'
 //   return <h4>This is marc and this is my first component</h4>;
 // }
 
+// setup vars
+
+// const names = ['john','doe','susan']
+// const newNames = names.map((name) => {
+//   return <h1>{name}</h1>
+// });
+// console.log(newNames)
+
 function Booklist () {
   return (
     <section className='booklist'>
-      <Book />
-    
-    </section>
-  )
+      {books.map((book) =>{
+        return (
+          <Book key={book.id} {...book}></Book>         
+        );
+      })}
+      </section>
+  );
 }
 
-const Book = () =>{
-  return <article className='book'>
-    <img className='photo' src="https://images-na.ssl-images-amazon.com/images/I/91yj3mbz4JL.jpg" alt=""/>
-    <h1>The Intelligent Investor: The Definitive Book</h1>
-    <h4>Benjamin Graham</h4>
-  </article>
-}
+const clickHandler = () => {
+  alert("Hello World!");
+};
 
+const complexExample = (author) => {
+  alert("author");
+};
 
 
 ReactDom.render(<Booklist />, document.getElementById('root'));
