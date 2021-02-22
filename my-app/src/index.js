@@ -30,13 +30,7 @@ function Booklist () {
   );
 }
 
-const clickHandler = () => {
-  alert("Hello World!");
-};
 
-const complexExample = (author) => {
-  alert("author");
-};
 
 
 ReactDom.render(<Booklist />, document.getElementById('root'));
